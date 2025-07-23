@@ -1,16 +1,16 @@
-# 🐞 BugBERT: NLP for Bug Prioritization
+# BugBERT: NLP for Bug Prioritization
 
 **Automating the prioritization of bug reports using DistilBERT, feature engineering, and machine learning.**
 
 ![BugBERT Banner](#) <!-- Replace with actual image link -->
 
-## 📌 Overview
+## Overview
 
 Manual bug triaging is labor-intensive, subjective, and doesn't scale with the volume of bug reports in large software systems. **BugBERT** is a hybrid ML-DL pipeline that leverages state-of-the-art NLP (DistilBERT), structured feature engineering, and robust classifiers (XGBoost) to automate bug priority classification with promising results.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 - **Total rows**: ~53,000
 - **Independent features**:
@@ -24,37 +24,37 @@ Manual bug triaging is labor-intensive, subjective, and doesn't scale with the v
 
 ---
 
-## 🧠 Methodology
+## Methodology
 
-### 🔹 1. Language Modeling with DistilBERT
+### 1. Language Modeling with DistilBERT
 
 - Extract sentence-level embeddings using `[CLS]` token
 - Input: Concatenated `Component`, `Title`, and `Description`
 - Fine-tuned using **class-weighted loss** to handle imbalance
 
-### 🔹 2. Categorical Feature Engineering
+### 2. Categorical Feature Engineering
 
 - **Frequency Encoding**: Based on category occurrence rates
 - **Target Encoding**: Based on mode priority class per category (with care to avoid leakage)
 
-### 🔹 3. Dimensionality Reduction & Clustering
+### 3. Dimensionality Reduction & Clustering
 
 - **PCA**: Reduced 768-dim embeddings to lower dimensions
 - **K-Means Clustering**: Added cluster IDs as new features
 
-### 🔹 4. Handling Class Imbalance
+### 4. Handling Class Imbalance
 
 - **Sample Weights**: Upweight minority classes during training
 - **SMOTE-NC**: Synthetic oversampling for numerical + categorical features
 
-### 🔹 5. Final Classification
+### 5. Final Classification
 
 - **XGBoost**: Trained on combined feature space
 - **Hyperparameter tuning**: Done with **Optuna**
 
 ---
 
-## 🧪 Results
+## Results
 
 | Priority | Precision | Recall | F1-Score | Support |
 |----------|-----------|--------|----------|---------|
@@ -68,9 +68,51 @@ Manual bug triaging is labor-intensive, subjective, and doesn't scale with the v
 - **Validation Macro F1**: 0.41
 - **Test Macro F1**: 0.42
 
-> 📈 Shows strong performance in dominant classes while minority classes benefit from balancing techniques.
+> Shows strong performance in dominant classes while minority classes benefit from balancing techniques.
 
 ---
 
-## 🗂 Project Structure
+---
+
+## 📷 Visualizations
+
+<!-- Replace '#' with actual image URLs or GitHub relative paths -->
+
+### Pipeline Architecture  
+![Pipeline Diagram](#)
+
+### Dimensionality Reduction  
+![PCA Explained Variance](#)
+
+### Priority Class Distribution  
+![Class Imbalance Chart](#)
+
+---
+
+## Technologies Used
+
+- Python, Jupyter Notebooks
+- HuggingFace Transformers (DistilBERT)
+- Scikit-learn, Imbalanced-learn, XGBoost, Optuna
+- SMOTE-NC, PCA, KMeans
+
+---
+
+## Acknowledgements
+
+- **Anant Maheshwari**, ABV-IIITM Gwalior  
+- **Dr. Anjali**, ABV-IIITM Gwalior (Supervisor)
+
+---
+
+## Contact
+
+For questions or collaboration opportunities, feel free to reach out:
+
+anant200519@gmail.com
+
+---
+
+
+
 
