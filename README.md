@@ -2,8 +2,6 @@
 
 **Automating the prioritization of bug reports using DistilBERT, feature engineering, and machine learning.**
 
-![BugBERT Banner](#) <!-- Replace with actual image link -->
-
 ## Overview
 
 Manual bug triaging is labor-intensive, subjective, and doesn't scale with the volume of bug reports in large software systems. **BugBERT** is a hybrid ML-DL pipeline that leverages state-of-the-art NLP (DistilBERT), structured feature engineering, and robust classifiers (XGBoost) to automate bug priority classification with promising results.
@@ -56,17 +54,8 @@ Manual bug triaging is labor-intensive, subjective, and doesn't scale with the v
 
 ## Results
 
-| Priority | Precision | Recall | F1-Score | Support |
-|----------|-----------|--------|----------|---------|
-| 0        | 0.46      | 0.50   | 0.48     | 2236    |
-| 1        | 0.36      | 0.34   | 0.35     | 2353    |
-| 2        | 0.79      | 0.74   | 0.76     | 7789    |
-| 3        | 0.21      | 0.33   | 0.26     | 572     |
-| 4        | 0.20      | 0.25   | 0.22     | 299     |
+<img width="530" height="352" alt="image" src="https://github.com/user-attachments/assets/751ea713-9c9d-4e8a-b5cf-d992338aae8b" />
 
-- **Validation Accuracy**: 63%
-- **Validation Macro F1**: 0.41
-- **Test Macro F1**: 0.42
 
 > Shows strong performance in dominant classes while minority classes benefit from balancing techniques.
 
@@ -76,16 +65,16 @@ Manual bug triaging is labor-intensive, subjective, and doesn't scale with the v
 
 ## 📷 Visualizations
 
-<!-- Replace '#' with actual image URLs or GitHub relative paths -->
-
-### Pipeline Architecture  
-![Pipeline Diagram](#)
+### Priority Class Distribution  
+<img width="784" height="840" alt="image" src="https://github.com/user-attachments/assets/1f488151-23c8-4e8b-bbfe-5abb12bf2a1f" />
 
 ### Dimensionality Reduction  
-![PCA Explained Variance](#)
+<img width="806" height="486" alt="image" src="https://github.com/user-attachments/assets/d63b1d18-2f14-42f6-bb13-6298ba5a79c1" />
 
-### Priority Class Distribution  
-![Class Imbalance Chart](#)
+### Pipeline Architecture  
+<img width="1353" height="523" alt="image" src="https://github.com/user-attachments/assets/9b109e2e-bb8e-4e60-a8a1-dbb50cd40ebd" />
+
+
 
 ---
 
